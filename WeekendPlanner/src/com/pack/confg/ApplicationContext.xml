@@ -1,0 +1,19 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Dependent Bean -->
+    <bean id="dateService"
+          class="com.pack.sbeans.DateService"/>
+
+    <!-- Target Bean -->
+    <bean id="weekendChecker"
+          class="com.pack.sbeans.WeekendChecker">
+
+        <!-- Dependency Injection -->
+        <property name="dateService" ref="dateService"/>
+    </bean>
+
+</beans>
