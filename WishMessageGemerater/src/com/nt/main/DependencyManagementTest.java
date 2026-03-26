@@ -3,7 +3,7 @@ package com.nt.main;
 
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
-import com.nt.sbeans.WishMessageGenerator;
+import com.nt.sbeans.WishMessageUsingConstructor;
 
 public class DependencyManagementTest {
 	public static void main(String[] args) {
@@ -12,9 +12,12 @@ public class DependencyManagementTest {
 		FileSystemXmlApplicationContext ctx = new FileSystemXmlApplicationContext(
 				"src/com/nt/cfgs/applicationContext.xml");
 //get target spring bean class obj ref
-		Object obj = ctx.getBean("wmg");
+		Object obj = ctx.getBean("wmgcon");
 //type casting
-		WishMessageGenerator generator = (WishMessageGenerator) obj;
+//		WishMessageGenerator generator = (WishMessageGenerator) obj;
+		
+		//using constructor
+		WishMessageUsingConstructor generator = (WishMessageUsingConstructor)obj;
 //invoke the b.method
 		String result = generator.showWishMessage("raja");
 		System.out.println(result);

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+         http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- cfg dependent spring bean -->
+    <bean id="petrolEng" class="com.pack1.PetrolEngine"/>
+		
+	<bean id="desealEng" class="com.pack1.DesealEngine"></bean>
+	
+	<bean id="car" class="com.pack1.Car">
+		<property name="engine" ref="desealEng"></property>
+	</bean>
+	
+</beans>

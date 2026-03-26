@@ -2,7 +2,10 @@ package com.nt.sbeans;
 
 import java.time.LocalTime;
 
+
+
 public class WishMessageGenerator {
+
 	private LocalTime time;
 
 	public WishMessageGenerator() {

@@ -9,8 +9,12 @@
     <bean id="ltime" class="java.time.LocalTime" factory-method="now"/>
 
     <!-- Cfg target spring bean -->
-    <bean id="wmg" class="com.nt.sbeans.WishMessageGenerator">
+    <!--  <bean id="wmg" class="com.nt.sbeans.WishMessageGenerator">
         <property name="time" ref="ltime"/>
+    </bean>
+    -->
+    <bean id="wmgcon" class="com.nt.sbeans.WishMessageUsingConstructor">
+        <constructor-arg name="date" ref="ltime"></constructor-arg>
     </bean>
 
 </beans>
